@@ -1,5 +1,5 @@
 package utils;
-public class Inventario {
+public class InventarioAlmacen {
 
     public static final double PORCENTAJE_PENALIZACION_ROTACION = 0.10;
     public static final double PORCENTAJE_DESCUENTO_ANTIGUEDAD = 0.15;

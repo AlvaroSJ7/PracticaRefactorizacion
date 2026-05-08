@@ -8,7 +8,7 @@ public class InventarioTest {
     @Test
     void testCalcularAjusteCategoriaPremium() {
         // Creamos el objeto de la clase refactorizada
-        Inventario inventario = new Inventario();
+        InventarioAlmacen inventario = new InventarioAlmacen();
 
         // El ajuste premium es del 20% (100 * 0.20 = 20.0)
         double resultado = inventario.calcularAjusteCategoria("premium", 100.0);
@@ -18,7 +18,7 @@ public class InventarioTest {
 
     @Test
     void testCalcularAjusteCategoriaBasica() {
-        Inventario inventario = new Inventario();
+        InventarioAlmacen inventario = new InventarioAlmacen();
 
         // El ajuste básico es del -5% (100 * -0.05 = -5.0)
         double resultado = inventario.calcularAjusteCategoria("basica", 100.0);
