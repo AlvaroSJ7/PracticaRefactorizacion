@@ -10,7 +10,6 @@ public class Inventario {
     public static final double PORCENTAJE_AJUSTE_PREMIUM = 0.20;
     public static final double PORCENTAJE_AJUSTE_BASICA = 0.05;
 
-
     public double calcularTotalInventario(int numeroProductos, double precioUnitario,
                                           int mesesCatalogo, int diasDesdeUltimaVenta, int stockActual, String tipoCategoria) {
 // Cálculo del valor base del inventario
