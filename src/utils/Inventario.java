@@ -11,6 +11,7 @@ public class Inventario {
             descuentoAntiguedad = valorBase * 0.15;
         }
 
+
 // Penalización por baja rotación (más de 60 días sin vender)
         double penalizacionRotacion = 0;
         if (diasDesdeUltimaVenta > 60) {
