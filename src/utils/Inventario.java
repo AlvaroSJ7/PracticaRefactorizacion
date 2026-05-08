@@ -6,6 +6,7 @@ public class Inventario {
         double valorBase = numeroProductos * precioUnitario;
 // Descuento por antigüedad (si lleva más de 12 meses
 // en catálogo)
+
         double descuentoAntiguedad = getDescuentoAntiguedad(mesesCatalogo, valorBase);
 
 
