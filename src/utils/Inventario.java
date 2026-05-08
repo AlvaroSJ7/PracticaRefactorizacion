@@ -17,23 +17,23 @@ public class Inventario {
 // Descuento por antigüedad (si lleva más de 12 meses
 // en catálogo)
 
-        double descuentoAntiguedad = getDescuentoAntiguedad(mesesCatalogo, valorBase);
+        double descuentoAntiguedad = calcularDescuentoAntiguedad(mesesCatalogo, valorBase);
 
 
 // Penalización por baja rotación (más de 60 días sin vender)
-        double penalizacionRotacion = getPenalizacionRotacion(diasDesdeUltimaVenta, valorBase);
+        double penalizacionRotacion = calcularPenalizacionRotacion(diasDesdeUltimaVenta, valorBase);
 
 // Bonificación por stock alto (más de 100 unidades)
-        double bonificacionStock = getBonificacionStock(stockActual, valorBase);
+        double bonificacionStock = calcularBonificacionStock(stockActual, valorBase);
 
 // Ajuste por tipo de categoría
-        double ajusteCategoria = getAjusteCategoria(tipoCategoria, valorBase);
+        double ajusteCategoria = calcularAjusteCategoria(tipoCategoria, valorBase);
 
 // Cálculo final
         return valorBase - descuentoAntiguedad - penalizacionRotacion + bonificacionStock + ajusteCategoria;
     }
 
-    private static double getAjusteCategoria(String tipoCategoria, double valorBase) {
+    public double calcularAjusteCategoria(String tipoCategoria, double valorBase) {
         double ajusteCategoria = 0;
         if (tipoCategoria.equals("premium")) {
             ajusteCategoria = valorBase * PORCENTAJE_AJUSTE_PREMIUM;
@@ -43,7 +43,7 @@ public class Inventario {
         return ajusteCategoria;
     }
 
-    private static double getBonificacionStock(int stockActual, double valorBase) {
+    private static double calcularBonificacionStock(int stockActual, double valorBase) {
         double bonificacionStock = 0;
         if (stockActual > LIMITE_STOCK_ALTO) {
             bonificacionStock = valorBase * PORCENTAJE_BONIFICACION_STOCK;
@@ -51,7 +51,7 @@ public class Inventario {
         return bonificacionStock;
     }
 
-    private static double getPenalizacionRotacion(int diasDesdeUltimaVenta, double valorBase) {
+    private static double calcularPenalizacionRotacion(int diasDesdeUltimaVenta, double valorBase) {
         double penalizacionRotacion = 0;
         if (diasDesdeUltimaVenta > LIMITE_DIAS_ROTACION) {
             penalizacionRotacion = valorBase * PORCENTAJE_PENALIZACION_ROTACION;
@@ -59,7 +59,7 @@ public class Inventario {
         return penalizacionRotacion;
     }
 
-    private static double getDescuentoAntiguedad(int mesesCatalogo, double valorBase) {
+    private static double calcularDescuentoAntiguedad(int mesesCatalogo, double valorBase) {
         double descuentoAntiguedad = 0;
         if (mesesCatalogo > LIMITE_MESES_ANTIGUEDAD) {
             descuentoAntiguedad = valorBase * PORCENTAJE_DESCUENTO_ANTIGUEDAD;
