@@ -10,16 +10,19 @@ public class Inventario {
         if (mesesCatalogo > 12) {
             descuentoAntiguedad = valorBase * 0.15;
         }
+
 // Penalización por baja rotación (más de 60 días sin vender)
         double penalizacionRotacion = 0;
         if (diasDesdeUltimaVenta > 60) {
             penalizacionRotacion = valorBase * 0.10;
         }
+
 // Bonificación por stock alto (más de 100 unidades)
         double bonificacionStock = 0;
         if (stockActual > 100) {
             bonificacionStock = valorBase * 0.05;
         }
+
 // Ajuste por tipo de categoría
         double ajusteCategoria = 0;
         if (tipoCategoria.equals("premium")) {
@@ -27,6 +30,7 @@ public class Inventario {
         } else if (tipoCategoria.equals("basica")) {
             ajusteCategoria = -valorBase * 0.05;
         }
+
 // Cálculo final
         return valorBase - descuentoAntiguedad - penalizacionRotacion + bonificacionStock + ajusteCategoria;
     }
