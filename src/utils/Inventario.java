@@ -17,7 +17,6 @@ public class Inventario {
             penalizacionRotacion = valorBase * 0.10;
         }
 
-
 // Bonificación por stock alto (más de 100 unidades)
         double bonificacionStock = 0;
         if (stockActual > 100) {
