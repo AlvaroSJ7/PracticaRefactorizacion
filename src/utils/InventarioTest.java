@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 public class InventarioTest {
 
+
     @Test
     void testCalcularAjusteCategoriaPremium() {
         // Creamos el objeto de la clase refactorizada
@@ -15,6 +16,7 @@ public class InventarioTest {
 
         assertEquals(20.0, resultado, "El ajuste premium debería ser 20.0");
     }
+
 
     @Test
     void testCalcularAjusteCategoriaBasica() {
